@@ -1,0 +1,6 @@
+<%= form_with model: @activity do |t| %>
+  <%= t.select :status, Activity.statuses.keys {} %>
+  <%= t.select :employee_id, Employee.all.collect {|employee| [employee.name, employee.id]}, prompt: true %>
+
+  <%= t.submit "Update activity", class: 'button' %>
+<% end %>

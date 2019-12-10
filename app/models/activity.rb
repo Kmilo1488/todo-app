@@ -23,4 +23,7 @@
 #
 
 class Activity < ApplicationRecord
+  belongs_to :employee
+
+  enum status: { pending: 0, working: 1, completed: 2 }
 end
