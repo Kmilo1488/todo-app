@@ -1,0 +1,7 @@
+<%= form_with model: @activity do |t| %>
+  <%= t.text_field :name, required: true %>
+  <%= t.number_field :workdays, required: true %>
+  <%= t.select :profile_id, Employee.all.collect {|employee| [employee.name, employee.id]}, prompt: true %>
+
+  <%= t.submit "Create activity", class: 'button' %>
+<% end %>

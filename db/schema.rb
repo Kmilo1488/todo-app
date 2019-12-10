@@ -12,13 +12,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_191_210_022_450) do
+ActiveRecord::Schema.define(version: 20_191_210_024_455) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
+  create_table 'activities', force: :cascade do |t|
+    t.string 'name', null: false
+    t.integer 'status', default: 0, null: false
+    t.integer 'workdays'
+    t.datetime 'completed_at'
+    t.bigint 'employee_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['employee_id'], name: 'index_activities_on_employee_id'
+  end
 
   create_table 'employees', force: :cascade do |t|
     t.string 'name', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
+
+  add_foreign_key 'activities', 'employees'
 end
