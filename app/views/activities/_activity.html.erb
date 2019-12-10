@@ -1,7 +1,9 @@
-<td><%= activity.name %></td>
-<td><%= activity.workdays %></td>
-<td><%= activity.employee&.name %></td>
-<td><%= activity.status %></td>
-<td><%= activity.completed_at %></td>
-<td><%= activity.days_late %></td>
-<td><%= link_to 'Edit activity', edit_activity_path(activity), class: 'button' %></td>
+<tr>
+  <td><%= activity.name %></td>
+  <td><%= activity.workdays %></td>
+  <td><%= activity.employee&.name %></td>
+  <td><%= activity.status %></td>
+  <td><%= activity.completed_at %></td>
+  <td><%= activity.days_late %></td>
+  <td><%= link_to 'Edit activity', edit_activity_path(activity), class: 'btn btn-success' %></td>
+</tr>

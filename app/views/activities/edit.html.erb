@@ -1,6 +1,13 @@
-<%= form_with model: @activity do |t| %>
-  <%= t.select :status, Activity.statuses.keys {} %>
-  <%= t.select :employee_id, Employee.all.collect {|employee| [employee.name, employee.id]}, prompt: true %>
+<div class="content">
+  <h1>Edit Activity</h1>
 
-  <%= t.submit "Update activity", class: 'button' %>
-<% end %>
+  <div class="form_class">
+    <%= bootstrap_form_with model: @activity do |t| %>
+      <%= t.select :status, Activity.statuses.keys {} %>
+      <%= t.select :employee_id, Employee.all.collect {|employee| [employee.name, employee.id]}, prompt: true %>
+
+
+      <%= t.submit "Update activity", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

@@ -1,49 +1,56 @@
-<h1>Hola</h1>
+<div class="container">
+  <div>
+    <h1>TODO APP</h1>
 
-<%= link_to 'New employee', new_employee_path, class: 'button' %>
-<%= link_to 'New activity', new_activity_path, class: 'button' %>
+    <%= link_to 'New employee', new_employee_path, class: 'btn btn-secondary' %>
+    <%= link_to 'New activity', new_activity_path, class: 'btn btn-primary' %>
+  </div>
+  <div class="row">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Wordays</th>
-    <th>Employee</th>
-    <th>Estatus</th>
-    <th>Completed at</th>
-    <th>Days late</th>
-    <th>Edit</th>
-  </tr>
-  <tr>
-    <%= render partial: 'activities/activity', collection: @activities.pending %>
-  </tr>
-</table>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Wordays</th>
-    <th>Employee</th>
-    <th>Estatus</th>
-    <th>Completed at</th>
-    <th>Days late</th>
-    <th>Edit</th>
-  </tr>
-  <tr>
-    <%= render partial: 'activities/activity', collection: @activities.working %>
-  </tr>
-</table>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Wordays</th>
-    <th>Employee</th>
-    <th>Estatus</th>
-    <th>Completed at</th>
-    <th>Days late</th>
-    <th>Edit</th>
-  </tr>
-  <tr>
-    <%= render partial: 'activities/activity', collection: @activities.completed %>
-  </tr>
-</table>
+
+
+    <h1>Pending activities</h1>
+    <table class="table" >
+      <tr>
+        <th>Name</th>
+        <th>Wordays</th>
+        <th>Employee</th>
+        <th>Estatus</th>
+        <th>Completed at</th>
+        <th>Days late</th>
+        <th>Edit</th>
+      </tr>
+      <%= render partial: 'activities/activity', collection: @activities.pending %>
+    </table>
+
+    <h1>Working activities</h1>
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Wordays</th>
+        <th>Employee</th>
+        <th>Estatus</th>
+        <th>Completed at</th>
+        <th>Days late</th>
+        <th>Edit</th>
+      </tr>
+      <%= render partial: 'activities/activity', collection: @activities.working %>
+    </table>
+
+    <h1>Finish activities</h1>
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Wordays</th>
+        <th>Employee</th>
+        <th>Estatus</th>
+        <th>Completed at</th>
+        <th>Days late</th>
+        <th>Edit</th>
+      </tr>
+      <%= render partial: 'activities/activity', collection: @activities.completed %>
+    </table>
+  </div>
+</div>

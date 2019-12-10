@@ -1,0 +1,12 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_class {
+
+  padding: 2px;
+}
