@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ActivitiesController < ApplicationController
-  before_action :set_activity
+  before_action :set_activity, only: %i[edit update]
 
   def new
     @activity = Activity.new

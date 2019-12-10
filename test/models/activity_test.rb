@@ -25,7 +25,20 @@
 require 'test_helper'
 
 class ActivityTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @activity = activities(:one)
+  end
+
+  test 'should valid fixture' do
+    assert_must validate_presence_of(:name), @activity
+  end
+
+  test 'should belong to employee' do
+    assert_must belong_to(:employee).optional, @activity
+  end
+
+  test 'should set completed_at after update' do
+    @activity.working!
+    assert_not_nil @activity.completed_at
+  end
 end

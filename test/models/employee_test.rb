@@ -13,7 +13,15 @@
 require 'test_helper'
 
 class EmployeeTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @employee = employees(:one)
+  end
+
+  test 'should valid fixture' do
+    assert_must validate_presence_of(:name), @employee
+  end
+
+  test 'should have many activities' do
+    assert_must have_many(:activities), @employee
+  end
 end

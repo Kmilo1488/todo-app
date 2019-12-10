@@ -10,10 +10,40 @@
     <th>Employee</th>
     <th>Estatus</th>
     <th>Completed at</th>
+    <th>Days late</th>
     <th>Edit</th>
   </tr>
   <tr>
-    <%= render partial: 'activities/activity', collection: @activities %>
+    <%= render partial: 'activities/activity', collection: @activities.pending %>
   </tr>
 </table>
 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Wordays</th>
+    <th>Employee</th>
+    <th>Estatus</th>
+    <th>Completed at</th>
+    <th>Days late</th>
+    <th>Edit</th>
+  </tr>
+  <tr>
+    <%= render partial: 'activities/activity', collection: @activities.working %>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Wordays</th>
+    <th>Employee</th>
+    <th>Estatus</th>
+    <th>Completed at</th>
+    <th>Days late</th>
+    <th>Edit</th>
+  </tr>
+  <tr>
+    <%= render partial: 'activities/activity', collection: @activities.completed %>
+  </tr>
+</table>
