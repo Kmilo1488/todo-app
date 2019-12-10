@@ -1,0 +1,5 @@
+<%= form_with model: @employee do |t| %>
+  <%= t.text_field :name, required: true %>
+
+  <%= t.submit "Create employee", class: 'button' %>
+<% end %>
